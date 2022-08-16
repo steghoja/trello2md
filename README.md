@@ -48,3 +48,16 @@ The markdown is then written to the console. If you want to rather have it in a 
 ## Extension to Json2md
 
 The Json2md node module in its current version expects a root node in the JSON construct. The Trello data does not quite look like that. To get the full output, you might need to change the file `node_modules/json2md/lib/index.js` as in [this pull request](https://github.com/IonicaBizau/json2md/pull/88).
+
+## Limitations
+
+The `trelloparse` script does not extract all information from Trello cards, but only:
+
+ * Name
+ * Containing list
+ * Description
+ * Members
+ * Labels
+ * Checklists
+
+Notably, it does not currently extract comments or attachments. Such things are relatively easy to add, though. Just see how the other elements are extracted and add your new element accordingly. Pull requests are welcome!
